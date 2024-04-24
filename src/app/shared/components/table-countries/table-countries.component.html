@@ -1,0 +1,47 @@
+<div *ngIf="data.length === 0; else dataPaises">
+  <shared-alert-data></shared-alert-data>
+</div>
+
+<ng-template #dataPaises>
+  <div class="relative overflow-x-auto h-3/6 shadow-md sm:rounded-lg mt-5">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
+        <tr>
+          <th scope="col" class="px-6 py-3" *ngFor="let header of headers">
+            {{ header }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+          *ngFor="let info of data"
+        >
+          <th
+            scope="row"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            {{ info.name.common }}
+          </th>
+          <td class="px-6 py-4">{{ info.capital }}</td>
+          <td class="px-6 py-4">{{ info.population | number }}</td>
+          <td class="px-6 py-4">{{ info.continents[0] }}</td>
+          <td class="px-6 py-4">
+            <img class="w-10" [src]="info.flags.svg" [alt]="info.name.common" />
+          </td>
+          <td class="px-6 py-4 text-right">
+            <a
+              [routerLink]="['/countries/by', info.cca3]"
+              class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+              >Ver información</a
+            >
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</ng-template>

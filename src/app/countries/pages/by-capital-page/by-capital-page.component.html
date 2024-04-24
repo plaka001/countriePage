@@ -1,0 +1,20 @@
+<h2
+  class="text-center font-bold text-lg xl:text-2xl align-middle m-3 underline"
+>
+  Buscar por Capital
+</h2>
+<hr class="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+
+<div class="mt-4">
+  <shared-search-box
+    placeholder="Buscar por capital"
+    (searchValue)="searchByCapital($event)"
+  ></shared-search-box>
+</div>
+
+<shared-loading-spiner *ngIf="isLoading"></shared-loading-spiner>
+
+<shared-table-countries
+  [headers]="headers"
+  [data]="capitals"
+></shared-table-countries>

@@ -1,0 +1,70 @@
+<h2
+  class="text-center font-bold text-lg xl:text-2xl align-middle m-3 underline"
+>
+  Pais: <strong>{{ data?.name?.common }}</strong>
+</h2>
+<hr class="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+
+<div class="flex w-full">
+  <div class="w-1/4">
+    <h2 class="font-bold text-lg xl:text-2xl align-middle m-3">Bandera</h2>
+    <img class="w-2/4" [src]="data?.flags?.svg" [alt]="data?.name?.common" />
+  </div>
+  <div>
+    <h2 class="font-bold text-lg xl:text-2xl align-middle m-3 underline">
+      Información
+    </h2>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead
+          class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Población</th>
+            <th scope="col" class="px-6 py-3">Código</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700"
+          >
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            >
+              {{ data.population }}
+            </th>
+            <td class="px-6 py-4">{{ data.cioc }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div>
+  <h1 class="font-bold text-lg xl:text-2xl align-middle m-3">Traducciones</h1>
+  <span
+    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+    >{{ data?.translations["ara"]?.common }}</span
+  >
+  <span
+    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+    >{{ data?.translations["bre"].common }}</span
+  >
+  <span
+    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+    >{{ data?.translations["ces"].common }}</span
+  >
+  <span
+    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+    >{{ data?.translations["cym"].common }}</span
+  >
+  <span
+    class="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300"
+    >{{ data?.translations["deu"].common }}</span
+  >
+</div>
